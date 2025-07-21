@@ -1,0 +1,198 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #4da6ff, #66cc99);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #222;
+  }
+  
+  header {
+    padding: 1rem;
+    background-color: #ffffffcc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+  }
+  
+  /* Structure générale */
+  main {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Instruction */
+  #instruction-container {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    max-width: 500px;
+  }
+  
+  /* Playground */
+  .playground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+    min-height: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 2px dashed #ccc;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .squirrel, .nut {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .squirrel {
+    background-image: url('assets/images/chicken_normal.png');
+  }
+  
+  .nut {
+    background-image: url('assets/images/egg.png');
+    margin-left: auto;
+  }
+  
+  /* Formulaire */
+  .form-area {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-area input {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .form-area button {
+    padding: 0.6rem 1.5rem;
+    background-color: #0077cc;
+    color: rgb(17, 14, 14);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-area button:hover {
+    background-color: #a5c2d6;
+  }
+  
+  /* Messages */
+  #message {
+    text-align: center;
+    font-weight: bold;
+    color: crimson;
+    margin-top: 0.5rem;
+  }
+  
+  #explanation {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 0.5rem;
+  }
+  
+  #progression {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #000;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .playground {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
+    }
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header a {
+        font-size: 0.9rem;
+        gap: 0.5rem;
+    }
+    .squirrel, .nut {
+      width: 40px;
+      height: 40px;
+      margin: 0.5rem 0;
+    }
+  
+    .form-area input {
+      width: 95%;
+    }
+  
+    .form-area button {
+      width: 60%;
+    }
+  
+    #instruction-container {
+      padding: 1rem;
+      width: 90%;
+    }
+  }
+  
+  .lesson-box {
+    margin-top: 1rem;
+    background: #ffffffcc;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 500px;
+    font-size: 0.95rem;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(6px);
+  }
+ .al {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+  }

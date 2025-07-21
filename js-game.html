@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de Formation JavaScript</title>
+  <link rel="stylesheet" href="js.css">
+</head>
+<body>
+
+<header>
+    <h1>⚙ Formation JavaScript - Le Jeu</h1>
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="about.html">À propos</a>
+    </nav>
+</header>
+
+  <main>
+    <div id="instruction-container">
+      <p id="instruction">Chargement de l'étape...</p>
+    </div>
+
+    <div class="playground" id="playground">
+      <div class="squirrel" id="squirrel"></div>
+      <div class="nut" id="nut"></div>
+    </div>
+
+    <div class="form-area">
+      <input type="text" id="codeInput" placeholder="Ex: document.body.style.backgroundColor = 'blue';" />
+      <button onclick="validateJS()">Valider</button>
+      <a href="#" class="al" onclick="toggleJSTheory()">📘 Voir la leçon</a>
+    </div>
+    <div id="jsTheory" class="lesson-box" style="display: none;"></div>
+    <p id="jsError" class="error"></p>
+    <p id="message"></p>
+    <p id="explanation" class="explanation"></p>
+    <p id="progression"></p>
+
+    <!-- Sons -->
+    <audio id="success1" src="assets/sounds/trops-les-nerfs.wav"></audio>
+    <audio id="success2" src="assets/sounds/ze-combi.wav"></audio>
+    <audio id="success3" src="assets/sounds/trops-les-nerfs.wav"></audio>
+  </main>
+
+  <!-- Étapes & script JS -->
+  <script src="data/jsSteps.js"></script>
+  <script src="data/jsGame.js"></script>
+
+</body>
+</html>

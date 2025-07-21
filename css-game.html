@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de Formation CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🎨 Formation CSS - Le Jeu</h1>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">À propos</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="instruction-container">
+      <p id="instruction">Chargement de l'étape...</p>
+    </div>
+
+    <div class="playground" id="playground">
+      <div class="squirrel" id="squirrel"></div>
+      <div class="nut" id="nut"></div>
+    </div>
+
+    <div class="form-area">
+        <input type="text" id="cssInput" placeholder="Ex: .squirrel { background-color: brown; }" />
+        <button onclick="validateCSS()">Valider</button>
+        <a href="#" class="al" onclick="toggleCSSTheory()">📘 Voir les leçons</a>
+    </div>
+    <div id="cssTheory" class="lesson-box" style="display: none;"></div>
+    <p id="cssError" class="error"></p>
+
+    <p id="message"></p>
+    <p id="explanation" class="explanation"></p>
+    <p id="progression"></p>
+
+    <!-- Sons -->
+    <audio id="success1" src="assets/sounds/ashoueee.wav"></audio>
+    <audio id="success2" src="assets/sounds/trops-les-nerfs.wav"></audio>
+    <audio id="success3" src="assets/sounds/ze-combi.wav"></audio>
+  </main>
+
+  <!-- Données et script -->
+  <script src="data/cssSteps.js"></script>
+  <script src="data/cssGame.js"></script>
+
+</body>
+</html>
