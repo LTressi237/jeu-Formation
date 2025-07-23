@@ -9,7 +9,7 @@ function displayCSSStep() {
   const step = cssSteps[currentCSSStep];
   document.getElementById('instruction').textContent = step.instruction;
   document.getElementById('progression').textContent = `Étape ${currentCSSStep + 1} / ${cssSteps.length}`;
-  document.getElementById('codeInput').value = '';
+  document.getElementById('cssInput').value = '';
   document.getElementById('message').textContent = '';
   document.getElementById('explanation').textContent = '';
 }
@@ -34,42 +34,42 @@ function applyMultipleStyles(target, input) {
   }
 
 function validateCSS() {
-  const input = document.getElementById('codeInput').value.trim();
-  const [property, valueRaw] = input.split(':');
+    const input = document.getElementById('cssInput').value.trim();
+    const [property, valueRaw] = input.split(':');
 
-  if (!property || !valueRaw) {
-    document.getElementById('message').textContent = "❌ Erreur de syntaxe. Format : propriété: valeur;";
-    return;
-  }
-
-  const value = valueRaw.replace(';', '').trim();
-  const playground = document.getElementById('playground');
-
-  // Réinitialise certaines propriétés à chaque test
-  applyMultipleStyles(playground, input);
-
-
-  const entered = input.replace(/\s+/g, ' ').replace(/;$/, '').trim();
-const expected = cssSteps[currentCSSStep].solution.replace(/\s+/g, ' ').replace(/;$/, '').trim();
-    // Vérifie si la valeur entrée correspond à la solution attendue
-  if (entered === expected) {
-    playSuccessSound();
-    document.getElementById('message').textContent = "✅ Bien joué !";
-    document.getElementById('explanation').textContent = cssSteps[currentCSSStep].explanation;
-
-    currentCSSStep++;
-    if (currentCSSStep < cssSteps.length) {
-      setTimeout(() => {
-        displayCSSStep();
-        randomNutPosition();
-      }, 1500);
-    } else {
-      document.getElementById('instruction').textContent = "🎉 Formation CSS terminée tu as dejaun bon niveau maintenant entrainne toi regulierement et ne lache rien 🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳🥳!";
-      document.getElementById('progression').textContent = "";
+    if (!property || !valueRaw) {
+        document.getElementById('message').textContent = "❌ Erreur de syntaxe. Format : propriété: valeur;";
+        return;
     }
-  } else {
-    document.getElementById('message').textContent = "❌ Mauvaise réponse. Essaie encore.";
-  }
+
+    const value = valueRaw.replace(';', '').trim();
+    const playground = document.getElementById('playground');
+
+    // Réinitialise certaines propriétés à chaque test
+    applyMultipleStyles(playground, input);
+
+    const entered = input.replace(/\s+/g, ' ').replace(/;$/, '').trim();
+    const expected = cssSteps[currentCSSStep].solution.replace(/\s+/g, ' ').replace(/;$/, '').trim();
+
+    // Vérifie si la valeur entrée correspond à la solution attendue
+    if (entered === expected) {
+        playSuccessSound();
+        document.getElementById('message').textContent = "✅ Bien joué !";
+        document.getElementById('explanation').textContent = cssSteps[currentCSSStep].explanation;
+
+        currentCSSStep++;
+        if (currentCSSStep < cssSteps.length) {
+            setTimeout(() => {
+                displayCSSStep();
+                randomNutPosition();
+            }, 1500);
+        } else {
+            document.getElementById('instruction').textContent = "🎉 Formation CSS terminée ! Tu as un bon niveau maintenant. Entraîne-toi régulièrement et ne lâche rien 🥳!";
+            document.getElementById('progression').textContent = "";
+        }
+    } else {
+        document.getElementById('message').textContent = "❌ Mauvaise réponse. Essaie encore.";
+    }
 }
 
 function playSuccessSound() {
@@ -169,11 +169,8 @@ function toggleCSSTheory() {
       box.style.display = 'none';
       box.innerHTML = '';
     }
-  }
-  
-  
-  
-
+}
+// CSS Game Steps
 window.onload = () => {
   startCSS();
 };
